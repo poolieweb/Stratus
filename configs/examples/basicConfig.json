@@ -1,0 +1,27 @@
+{
+  "systemName": "demoSystem",
+  "systemDescription": "Used to demo the features of stratus application",
+  "schema": {
+    "affinity": [
+      {
+        "name": "demoSystemAffinityGroup",
+        "description": "Example AffinityGroup",
+        "region": "west europe"
+      }
+    ],
+    "storage": [
+      {
+        "name": "stratusdemosystem",
+        "affinity": "demoSystemAffinityGroup",
+        "replication": "Geo-Redundant"
+      }
+    ],
+    "network": [
+      {
+        "name": "stratusdemosystem",
+        "region": "west europe"
+      }
+    ]
+  },
+  "version": "0.0.1"
+}

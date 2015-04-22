@@ -1,0 +1,34 @@
+{
+  "name": "Stratus",
+  "version": "0.0.1",
+  "description": "Cloud Config Setup Tool",
+  "main": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://poolieweb@github.com/poolieweb/Stratus.git"
+  },
+  "keywords": [
+    "azure",
+    "node",
+    "config"
+  ],
+  "author": "Richard Poole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poolieweb/Stratus/issues"
+  },
+  "homepage": "https://github.com/poolieweb/Stratus",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "commander": "^2.8.0",
+    "console.json": "^0.2.1",
+    "jsonfile": "^2.0.0"
+  },
+  "bin": {
+    "stratus": "index.js"
+  }
+}
