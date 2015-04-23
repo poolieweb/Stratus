@@ -1,5 +1,5 @@
 {
-  "name": "Stratus",
+  "name": "stratus-shell",
   "version": "0.0.1",
   "description": "Cloud Config Setup Tool",
   "main": "index.js",
