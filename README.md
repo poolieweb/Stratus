@@ -9,9 +9,7 @@ system state and the order in which its created and destroyed.
 ## Installation
 
     $ npm install stratus-shell -g
-    
-
-
+   
 ## Usage
 
     $ stratus --help
