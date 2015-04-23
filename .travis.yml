@@ -3,7 +3,7 @@ node_js:
   - "stable"
 deploy:
   provider: npm
-  email: "poolieweb@hotmail.com"
+  email: "poolieweb@yahoo.co.uk"
   api_key: "dXNlcm5hbWU6cGFzc3dvcmQ="
   on:
     tags: true
