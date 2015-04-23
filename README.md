@@ -22,5 +22,5 @@ The following command will show an example config file from the current installe
 
     $ stratus --help --example
 
-To view the latest example files, navigate to this [a folder](https://github.com/poolieweb/Stratus/tree/master/configs/examples)
+To view the latest example files, navigate to this [folder](https://github.com/poolieweb/Stratus/tree/master/configs/examples)
 
