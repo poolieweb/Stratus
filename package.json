@@ -26,7 +26,8 @@
     "colors": "^1.0.3",
     "commander": "^2.8.0",
     "console.json": "^0.2.1",
-    "jsonfile": "^2.0.0"
+    "jsonfile": "^2.0.0",
+    "jsonschema": "^1.0.1"
   },
   "devDependencies": {
     "mocha": "^2.0.0"
