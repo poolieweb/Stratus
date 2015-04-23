@@ -1,2 +1,5 @@
 # Stratus
-Node based cloud configuration tool
+
+Node command line utility for configuring cloud IaaS and PaaS systems.
+
+

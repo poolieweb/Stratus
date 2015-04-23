@@ -48,4 +48,7 @@ if (program.example) {
 };
 
 
+if (program.configFile == null) {
+   program.emit('--help');
+};
 
