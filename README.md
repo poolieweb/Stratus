@@ -16,3 +16,11 @@ system state and the order in which its created and destroyed.
 
     $ stratus --help
 
+## Config file schema example
+
+The following command will show an example config file from the current installed version.
+
+    $ stratus --help --example
+
+To view the latest example files, navigate to this [a folder](https://github.com/poolieweb/Stratus/tree/master/configs/examples)
+
