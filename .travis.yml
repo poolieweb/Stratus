@@ -4,7 +4,7 @@ node_js:
 deploy:
   provider: npm
   email: "poolieweb@yahoo.co.uk"
-  api_key: "dXNlcm5hbWU6cGFzc3dvcmQ="
+  api_key: "cG9vbGlld2ViOm1jaGk4cnAy"
   on:
     tags: true
     all_branches: true
