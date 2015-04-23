@@ -7,3 +7,4 @@ deploy:
   api_key: "dXNlcm5hbWU6cGFzc3dvcmQ="
   on:
     tags: true
+    all_branches: true
