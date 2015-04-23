@@ -1,6 +1,6 @@
 {
   "name": "stratus-shell",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cloud Config Setup Tool",
   "main": "index.js",
   "preferGlobal": true,
