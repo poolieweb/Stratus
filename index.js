@@ -4,8 +4,10 @@ var program = require('commander');
 require('console.json');
 var jf = require('jsonfile');
 
+
+var configController = require("./lib/configController")
+
 program
-    .option('-p, --cloudProvider [name]', 'cloud provider [azure]', 'azure')
     .option('-c, --configFile [file]', 'locatation of config file')
     .option('-m, --mode [mode]', 'mode of operation (setup/teardown) [setup]', 'setup')
     .option('-t, --test', 'preview the changes to console')
@@ -15,12 +17,12 @@ program
 program.on('--help', function () {
     console.log('  Examples:');
     console.log('');
-    console.log('    $ stratus --help');
-    console.log('    $ stratus -p Azure -c simpleNetwork.json');
-    console.log('    $ stratus -p Azure -c simpleNetwork.json -m setup');
-    console.log('    $ stratus -p Azure -c simpleNetwork.json -m teardown');
-    console.log('    $ stratus -p Azure -c simpleNetwork.json -m setup -t');
-    console.log('    $ stratus -p Azure -c simpleNetwork.json -m teardown -t');
+    console.log('    $ stratus --help   (Displays this screen)');
+    console.log('    $ stratus -c simpleNetwork.json   (Validates the config file)');
+    console.log('    $ stratus -c simpleNetwork.json -m setup');
+    console.log('    $ stratus -c simpleNetwork.json -m teardown');
+    console.log('    $ stratus -c simpleNetwork.json -m setup -t');
+    console.log('    $ stratus -c simpleNetwork.json -m teardown -t');
     console.log('');
     console.log('  Notes:');
     console.log('');
@@ -31,6 +33,7 @@ program.on('--help', function () {
     console.log('');
     console.log('    to view example config json file use the command "stratus --example"');
 
+    exit(0);
 });
 
 
@@ -42,17 +45,24 @@ if (program.example) {
     jf.readFile(file, function (err, obj) {
       if(obj!=null)  console.json('', obj);
       if(err!=null)  console.json('', err);
+      exit(0);
     })
-
 }
 
 
 //Process help if no arg are supplied
-if (program.configFile == null) {
+if (program.configFile == null && program.example == null) {
     program.emit('--help');
 }
 
 
+//Process help if no arg are supplied
+if (program.configFile != null) {
+
+    new configController.ConfigController(program.configFile,true);
+    console.log('Config file was successfully parsed, no issues found');
+
+}
 
 function exit(exitCode) {
     process.exit(code = exitCode);
