@@ -1,16 +1,16 @@
 var assert = require("assert"); // node.js core module
 var sinon = require("sinon");
 var chai = require("chai");
-var controller = require('../lib/configController');
+var ConfigController = require('../lib/configController');
 
 var jf = require('jsonfile');
 var file = './configs/examples/basicConfig.json';
 
 var validJson = jf.readFileSync(file);
 
-describe('configController', function () {
+describe('Config Controller', function () {
 
-    describe('validateJson', function () {
+    describe('Validate Json', function () {
 
         var sandbox;
 
@@ -32,7 +32,7 @@ describe('configController', function () {
             it("should return 'false' when the json is null", function () {
 
                 chai.expect(function (result) {
-                    new controller.ConfigController(null);
+                    new ConfigController(null);
                 }).to.throw('Configuration Error');
 
                 sinon.assert.calledWithExactly(console.log, "Config Missing")
@@ -41,7 +41,7 @@ describe('configController', function () {
 
             it("should return 'true' when the base json is given", function () {
                 chai.expect(function (result) {
-                    new controller.ConfigController(file);
+                    new ConfigController(file);
                 }).not.to.throw('Configuration Error');
             })
 
@@ -54,7 +54,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemName = null;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemName missing should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Missing: systemName")
             });
@@ -63,7 +63,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemName = 1;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemName not type string should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: systemName")
             });
@@ -72,14 +72,14 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemName = "";
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemName empty should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: systemName")
             });
 
             it("should return 'true' when 'systemName' is string", function () {
                 var validateJson = Object.create(validJson);
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, true, "systemName is string should return 'true'")
             })
 
@@ -92,7 +92,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemDescription = null;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemDescription missing should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Missing: systemDescription")
             });
@@ -101,7 +101,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemDescription = 1;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemDescription not type string should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: systemDescription")
             });
@@ -110,14 +110,14 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.systemDescription = "";
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "systemDescription empty should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: systemDescription")
             });
 
             it("should return 'true' when 'systemDescription' is string", function () {
                 var validateJson = Object.create(validJson);
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, true, "systemDescription is string should return 'true'")
             })
         });
@@ -128,7 +128,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.version = null;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "version missing should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Missing: version")
             });
@@ -137,7 +137,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.version = 1;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "version not type string should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: version")
             });
@@ -146,14 +146,14 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.version = "";
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "version empty should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: version")
             });
 
             it("should return 'true' when 'version' is string", function () {
                 var validateJson = Object.create(validJson);
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, true, "version is string should return 'true'")
             })
         });
@@ -164,7 +164,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.schema = null;
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "schema missing should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Missing: schema")
             });
@@ -173,7 +173,7 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.schema = "test";
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "schema not type array should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: schema")
             });
@@ -182,18 +182,24 @@ describe('configController', function () {
                 var validateJson = Object.create(validJson);
                 validateJson.schema = [];
 
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, false, "schema empty should return 'false'");
                 sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: schema")
             });
 
             it("should return 'true' when 'schema' is string", function () {
                 var validateJson = Object.create(validJson);
-                var result = new controller.ConfigController(file).validate(validateJson);
+                var result = new ConfigController(file).validate(validateJson);
                 assert.equal(result, true, "schema is non-empty array should return 'true'")
             })
         });
 
+
+    })
+
+    describe('ParseSchema',function() {
+
+       
 
     })
 });

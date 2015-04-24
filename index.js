@@ -5,7 +5,7 @@ require('console.json');
 var jf = require('jsonfile');
 
 
-var configController = require("./lib/configController")
+var ConfigController = require("./lib/configController");
 
 program
     .option('-c, --configFile [file]', 'locatation of config file')
@@ -59,7 +59,7 @@ if (program.configFile == null && program.example == null) {
 //Process help if no arg are supplied
 if (program.configFile != null) {
 
-    new configController.ConfigController(program.configFile,true);
+    new ConfigController(program.configFile,true);
     console.log('Config file was successfully parsed, no issues found');
 
 }
