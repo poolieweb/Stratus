@@ -1,0 +1,38 @@
+{
+  "systemName": "demoSystem",
+  "systemDescription": "Used to demo the features of stratus application",
+  "schema": [
+    {"affinity": []},
+    {"storage": [
+      {
+        "schema":[
+          {"storageSub1": []},
+          {"storageSub2": []},
+          {"storageSub3": []}
+        ]
+      }
+    ]},
+    {"network": [
+      {
+        "schema":[
+          {"networkSub1": []},
+          {"networkSub2": []},
+          {"networkSub3": [
+
+
+              {
+                "schema":[
+                  {"networkSub1": []},
+                  {"networkSub2": []},
+                  {"networkSub3": []}
+                ]
+              }
+
+
+          ]}
+        ]
+      }
+    ]}
+  ],
+  "version": "0.0.1"
+}

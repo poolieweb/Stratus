@@ -59,8 +59,9 @@ if (program.configFile == null && program.example == null) {
 //Process help if no arg are supplied
 if (program.configFile != null) {
 
-    new ConfigController(program.configFile,true);
-    console.log('Config file was successfully parsed, no issues found');
+    var controller = new ConfigController(program.configFile,true);
+    console.log('Config file was successfully parsed, no issues found.');
+    console.log('Schema has : ' + controller.nodeCount + ' nodes.');
 
 }
 

@@ -27,6 +27,7 @@ describe('Config Controller', function () {
             // restore the environment as it was before
             sandbox.restore();
         });
+
         describe('validate config', function () {
 
             it("should return 'false' when the json is null", function () {
@@ -197,9 +198,33 @@ describe('Config Controller', function () {
 
     })
 
-    describe('ParseSchema',function() {
+    describe('Parse Schema Nodes',function() {
 
-       
+        it("should have 5 nodes", function () {
+
+            var file = './configs/testConfigs/5NodeTest.json';
+
+            var result = new ConfigController(file)
+            assert.equal(result.nodeCount, 5, "nodeCount should be 5");
+        });
+
+        it("should have 6 nodes", function () {
+
+            var file = './configs/testConfigs/6NodeTest.json';
+
+            var result = new ConfigController(file)
+            assert.equal(result.nodeCount, 6, "nodeCount should be 6");
+
+        });
+
+        it("should have 12 nodes", function () {
+
+            var file = './configs/testConfigs/12NodeTest.json';
+
+            var result = new ConfigController(file)
+            assert.equal(result.nodeCount, 12, "nodeCount should be 12");
+
+        });
 
     })
 });
