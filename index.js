@@ -63,6 +63,8 @@ if (program.configFile != null) {
     console.log('Config file was successfully parsed, no issues found.');
     console.log('Config has : ' + controller.nodeCount + ' nodes.');
 
+    console.log('Raw Nodes : ' + JSON.stringify(controller.nodes));
+
 }
 
 function exit(exitCode) {

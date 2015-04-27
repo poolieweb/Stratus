@@ -2,16 +2,14 @@
   "systemName": "demoSystem",
   "systemDescription": "Used to demo the features of stratus application",
   "nodes": [
-    {"affinity": []},
-    {"storage": [
-      {
-        "nodes":[
-          {"storageSub1": []},
-          {"storageSub2": []}
-        ]
-      }
-    ]},
-    {"network": []}
+    {},
+    {
+      "nodes": [
+        {},
+        {}
+      ]
+    },
+    {}
   ],
   "version": "0.0.1"
 }

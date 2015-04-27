@@ -3,110 +3,42 @@
   "systemDescription": "Used to demo the features of stratus application",
   "nodes": [
     {
-      "affinity": [
-        {
-          "name": "demoSystemAffinityGroup",
-          "description": "Example AffinityGroup",
-          "region": "west europe"
-        }
-      ]
+      "name": "demoSystemAffinityGroup",
+      "description": "Example AffinityGroup",
+      "region": "west europe"
     },
     {
-      "storage": [
+      "name": "stratusdemosystem",
+      "affinity": "demoSystemAffinityGroup",
+      "replication": "Geo-Redundant",
+      "nodes": [
+        {
+          "name": "stratusdemosystem",
+          "affinity": "demoSystemAffinityGroup",
+          "replication": "Geo-Redundant"
+        },
         {
           "name": "stratusdemosystem",
           "affinity": "demoSystemAffinityGroup",
           "replication": "Geo-Redundant",
           "nodes": [
             {
-              "storageSub1": [
-                {
-                  "name": "stratusdemosystem",
-                  "affinity": "demoSystemAffinityGroup",
-                  "replication": "Geo-Redundant"
-                }
-              ]
+              "name": "stratusdemosystem",
+              "affinity": "demoSystemAffinityGroup",
+              "replication": "Geo-Redundant"
             },
             {
-              "storageSub2": [
-                {
-                  "name": "stratusdemosystem",
-                  "affinity": "demoSystemAffinityGroup",
-                  "replication": "Geo-Redundant",
-                  "nodes": [
-                    {
-                      "storageSub1": [
-                        {
-                          "name": "stratusdemosystem",
-                          "affinity": "demoSystemAffinityGroup",
-                          "replication": "Geo-Redundant"
-                        }
-                      ]
-                    },
-                    {
-                      "storageSub2": [
-                        {
-                          "name": "stratusdemosystem",
-                          "affinity": "demoSystemAffinityGroup",
-                          "replication": "Geo-Redundant"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "name": "stratusdemosystem",
+              "affinity": "demoSystemAffinityGroup",
+              "replication": "Geo-Redundant"
             }
           ]
         }
       ]
     },
     {
-      "network": [
-        {
-          "name": "stratusdemosystem",
-          "region": "west europe",
-          "nodes": [
-            {
-              "storageSub1": [
-                {
-                  "name": "stratusdemosystem",
-                  "affinity": "demoSystemAffinityGroup",
-                  "replication": "Geo-Redundant"
-                }
-              ]
-            },
-            {
-              "storageSub2": [
-                {
-                  "name": "stratusdemosystem",
-                  "affinity": "demoSystemAffinityGroup",
-                  "replication": "Geo-Redundant",
-                  "nodes": [
-                    {
-                      "storageSub1": [
-                        {
-                          "name": "stratusdemosystem",
-                          "affinity": "demoSystemAffinityGroup",
-                          "replication": "Geo-Redundant"
-                        }
-                      ]
-                    },
-                    {
-                      "storageSub2": [
-                        {
-                          "name": "stratusdemosystem",
-                          "affinity": "demoSystemAffinityGroup",
-                          "replication": "Geo-Redundant"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "name": "stratusdemosystem",
+      "region": "west europe"
     }
   ],
   "version": "0.0.1"

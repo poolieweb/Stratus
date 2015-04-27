@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/poolieweb/Stratus",
   "dependencies": {
+    "collections": "^1.2.2",
     "colors": "^1.0.3",
     "commander": "^2.8.0",
     "console.json": "^0.2.1",
