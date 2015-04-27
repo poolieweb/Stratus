@@ -1,11 +1,11 @@
 {
   "systemName": "demoSystem",
   "systemDescription": "Used to demo the features of stratus application",
-  "schema": [
+  "nodes": [
     {"affinity": []},
     {"storage": [
       {
-        "schema":[
+        "nodes":[
           {"storageSub1": []},
           {"storageSub2": []},
           {"storageSub3": []}

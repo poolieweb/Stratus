@@ -1,7 +1,7 @@
 {
   "systemName": "demoSystem",
   "systemDescription": "Used to demo the features of stratus application",
-  "schema": [
+  "nodes": [
     {
       "affinity": [
         {
@@ -17,7 +17,7 @@
           "name": "stratusdemosystem",
           "affinity": "demoSystemAffinityGroup",
           "replication": "Geo-Redundant",
-          "schema": [
+          "nodes": [
             {
               "storageSub1": [
                 {
@@ -33,7 +33,7 @@
                   "name": "stratusdemosystem",
                   "affinity": "demoSystemAffinityGroup",
                   "replication": "Geo-Redundant",
-                  "schema": [
+                  "nodes": [
                     {
                       "storageSub1": [
                         {
@@ -65,7 +65,7 @@
         {
           "name": "stratusdemosystem",
           "region": "west europe",
-          "schema": [
+          "nodes": [
             {
               "storageSub1": [
                 {
@@ -81,7 +81,7 @@
                   "name": "stratusdemosystem",
                   "affinity": "demoSystemAffinityGroup",
                   "replication": "Geo-Redundant",
-                  "schema": [
+                  "nodes": [
                     {
                       "storageSub1": [
                         {

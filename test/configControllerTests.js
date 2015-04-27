@@ -159,46 +159,46 @@ describe('Config Controller', function () {
             })
         });
 
-        describe('validate schema', function () {
+        describe('validate nodes', function () {
 
-            it("should return 'false' when 'schema' is null", function () {
+            it("should return 'false' when 'nodes' is null", function () {
                 var validateJson = Object.create(validJson);
-                validateJson.schema = null;
+                validateJson.nodes = null;
 
                 var result = new ConfigController(file).validate(validateJson);
-                assert.equal(result, false, "schema missing should return 'false'");
-                sinon.assert.calledWithExactly(console.log, "Config Element Missing: schema")
+                assert.equal(result, false, "nodes missing should return 'false'");
+                sinon.assert.calledWithExactly(console.log, "Config Element Missing: nodes")
             });
 
-            it("should return 'false' when 'schema' is not a array", function () {
+            it("should return 'false' when 'nodes' is not a array", function () {
                 var validateJson = Object.create(validJson);
-                validateJson.schema = "test";
+                validateJson.nodes = "test";
 
                 var result = new ConfigController(file).validate(validateJson);
-                assert.equal(result, false, "schema not type array should return 'false'");
-                sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: schema")
+                assert.equal(result, false, "nodes not type array should return 'false'");
+                sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: nodes")
             });
 
-            it("should return 'false' when 'schema' is empty", function () {
+            it("should return 'false' when 'nodes' is empty", function () {
                 var validateJson = Object.create(validJson);
-                validateJson.schema = [];
+                validateJson.nodes = [];
 
                 var result = new ConfigController(file).validate(validateJson);
-                assert.equal(result, false, "schema empty should return 'false'");
-                sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: schema")
+                assert.equal(result, false, "nodes empty should return 'false'");
+                sinon.assert.calledWithExactly(console.log, "Config Element Empty or Wrong Type: nodes")
             });
 
-            it("should return 'true' when 'schema' is string", function () {
+            it("should return 'true' when 'nodes' is string", function () {
                 var validateJson = Object.create(validJson);
                 var result = new ConfigController(file).validate(validateJson);
-                assert.equal(result, true, "schema is non-empty array should return 'true'")
+                assert.equal(result, true, "nodes is non-empty array should return 'true'")
             })
         });
 
 
     })
 
-    describe('Parse Schema Nodes',function() {
+    describe('Parse nodes Nodes',function() {
 
         it("should have 5 nodes", function () {
 

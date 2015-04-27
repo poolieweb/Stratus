@@ -61,7 +61,7 @@ if (program.configFile != null) {
 
     var controller = new ConfigController(program.configFile,true);
     console.log('Config file was successfully parsed, no issues found.');
-    console.log('Schema has : ' + controller.nodeCount + ' nodes.');
+    console.log('Config has : ' + controller.nodeCount + ' nodes.');
 
 }
 
