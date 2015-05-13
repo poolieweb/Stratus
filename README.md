@@ -1,3 +1,12 @@
+
+
+# Deprecated !!
+Microsoft Azure happened to have the smae idea as me!
+Please see https://msdn.microsoft.com/en-us/library/azure/dn835138.aspx
+
+
+
+
 # Stratus
 
 [![Build Status](https://travis-ci.org/poolieweb/Stratus.svg?branch=master)](https://travis-ci.org/poolieweb/Stratus)
